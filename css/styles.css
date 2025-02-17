@@ -1,0 +1,33 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(143, 17, 17);
+    /* usa o modelo flexBox, conceito para posicionamento */
+    display: flex;
+    align-items: center; /*centraliza verticslmente */
+    justify-content: center; /* centraliza verticalmente */
+    height: 100vh; /* define a altura da tela - 100% */
+}
+.card{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    text-align: center;
+    border-radius: 5px;
+    cursor:pointer;
+}
+button{
+    background:rgb(180, 44, 44);
+    color:white;
+    border: none;
+    padding: 10px 15px;
+}
+button:hover{
+    background-color: rgb(255, 0, 0);
+}
+.image{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
