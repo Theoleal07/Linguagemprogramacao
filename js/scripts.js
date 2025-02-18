@@ -1,3 +1,3 @@
 function seguir(){
-    alert('Você agora está seguindo Savalon')
+    alert('Você agora está seguindo Samuel P. Souza')
 }
