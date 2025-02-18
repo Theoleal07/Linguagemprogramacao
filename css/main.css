@@ -23,7 +23,7 @@ button{
     cursor: pointe;/*ponteiro do mouse*/
 }
 button:hover{
-    background-color: rgb(233, 233, 148)
+    background-color: Light Sky Blue 
 }
 .image{
     border-radius: 50%; /*cantos arredondados*/
