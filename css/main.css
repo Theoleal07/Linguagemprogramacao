@@ -32,3 +32,14 @@ button:hover{
     margin-bottom: 10px;/*espaçamento externo abaixo*/
 
 }
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #333;
+    color: rgb(191, 183, 22);
+    padding: 20xp;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
