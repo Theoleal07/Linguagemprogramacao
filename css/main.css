@@ -1,45 +1,77 @@
 body {
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: rgb(192, 192, 211);
-/*usa modelo FlexBox, conceito de caixa para posicionamento */
+    /* Usa modelo FlexBox para centralizar conteúdo */
     display: flex; 
-    align-items: center; /* centraliza verticalmente */
-    justify-content: center; /* centraliza horizontalmente */
-    height: 100vh; /* define a altura da tela - 100% */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
 }
-.card{
+
+.card {
     background-color: rgb(114, 139, 139);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px  rgba ( 0, 0, 0, 0.1);
-    text-align: center 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-button{
+
+button {
     background-color: bisque;
     color: black;
-    border: nome;
-    padding: 10px 15px; /*10px é superior e inferior e 15xp é esquerda e direita*/
-    border-radius: 5px; /*borda*/
-    cursor: pointe;/*ponteiro do mouse*/
+    border: none;
+    padding: 10px 15px; /* 10px acima/abaixo, 15px esquerda/direita */
+    border-radius: 5px;
+    cursor: pointer; /* Cursor correto */
 }
-button:hover{
-    background-color: Light Sky Blue 
-}
-.image{
-    border-radius: 50%; /*cantos arredondados*/
-    width: 135px;/*largura da imagem*/
-    height: 135px;/*altura da imagem*/
-    margin-bottom: 10px;/*espaçamento externo abaixo*/
 
+button:hover {
+    background-color: rgb(52, 52, 186); /* Correção da cor */
 }
+
+.image {
+    border-radius: 50%; /* Imagem arredondada */
+    width: 135px;
+    height: 135px;
+    margin-bottom: 10px;
+}
+
 .sidebar {
     width: 200px;
     height: 100vh;
-    background: #333;
-    color: rgb(191, 183, 22);
-    padding: 20xp;
+    background: #403f3f;
+    color: rgb(193, 188, 99);
+    padding: 20px;
     position: fixed;
     left: 0;
     top: 0;
 }
 
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+/* Corrige a cor dos links dentro da sidebar */
+.sidebar ul li a {
+    color: rgb(196, 34, 34);
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: rgb(255, 100, 100);
+}
+
+/* Ajuste no container */
+.container {
+    flex-grow: 1; /* Permite que o conteúdo cresça */
+    padding: 20px;
+    margin-left: 200px; /* Para compensar a sidebar fixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
