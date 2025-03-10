@@ -66,6 +66,133 @@ function exe7() {
         "Se engordar 15%: " + pesoEngordar.toFixed(2) + " kg<br>" +
         "Se emagrecer 20%: " + pesoEmagrecer.toFixed(2) + " kg";
 }
+function exe8() {
+    let nro1 = Number(document.getElementById("nro1").value); // Captura o valor inserido no campo de entrada
+
+    // Verifica se o valor é um número válido e maior que 0
+    if (isNaN(nro1) || nro1 <= 0) {
+        document.getElementById("sub").innerText = "Por favor, insira um peso válido em kg."; // Exibe uma mensagem de erro
+    } else {
+        let sub = nro1 * 1000; // Converte de kg para gramas
+        document.getElementById("sub").innerText = "O peso em gramas é: " + sub; // Exibe o resultado
+    }
+}
+function exe9() {
+    let nro1 = Number(document.getElementById("nro1").value);
+    let nro2 = Number(document.getElementById("nro2").value);
+    let altura = Number(document.getElementById("altura").value);
+
+    if (nro1 <= 0 || nro2 <= 0 || altura <= 0 || isNaN(nro1) || isNaN(nro2) || isNaN(altura)) {
+        document.getElementById("sub").innerText = "Insira valores válidos!";
+    } else {
+        let area = ((nro1 + nro2) * altura) / 2;//calcula a área do trapézio  
+        document.getElementById("sub").innerText = "A área do trapézio é: " + area.toFixed(2) + " ²";
+    }
+}
+function exe10() {
+    let lado = Number(document.getElementById("nro1").value);
+    
+    if (isNaN(lado) || lado <= 0) {
+        document.getElementById("sub").textContent = "Digite um valor válido para o lado!";
+        return;
+    }
+
+    let area = lado * lado;
+    document.getElementById("sub").textContent = `O resultado é: ${area}`;
+}
+function exe11(){
+    let D = Number(document.getElementById("nro1").value);
+    let d = Number(document.getElementById("nro2").value);
+
+    let area =(D * d)/2
+    document.getElementById("sub").textContent="A área do losango é: " + area;
+}
+function exe12() {
+    let salarioMinimo = Number(document.getElementById("nro1").value);
+    let salarioFuncionario = Number(document.getElementById("nro2").value);
+
+    if (salarioMinimo > 0) {
+        let quantidade = salarioFuncionario / salarioMinimo;
+        document.getElementById("resultado").innerText = 
+            "O funcionário recebe: " + quantidade.toFixed(2) + " salários mínimos.";
+        } else {
+        document.getElementById("resultado").innerText =  
+            "Erro: O salário mínimo deve ser maior que zero.";
+    }
+}
+function exe13() {
+    // Obtém o valor digitado pelo usuário
+    let numero = Number(document.getElementById("nro1").value);
+    let resultado = '';
+
+    // Verifica se o número é válido
+    if (isNaN(numero)) {
+        document.getElementById("resultado").innerHTML = "Digite um número válido!";
+        return;
+    }
+
+    // Calcula a tabuada
+    for (let i = 0; i <= 10; i++) {
+        resultado += `${numero} × ${i} = ${numero * i}<br>`;
+    }
+
+    // Exibe o resultado na página
+    document.getElementById("resultado").innerHTML = resultado;
+
+    // Efeito de explosão
+    const explosao = document.getElementById('explosao');
+    explosao.innerHTML = ''; // Limpa a explosão anterior
+
+    const sinais = ['+', '-', '×', '÷'];
+    const numeroSinais = 20; // Quantidade de sinais na explosão
+
+    for (let i = 0; i < numeroSinais; i++) {
+        const sinal = document.createElement('span');
+        sinal.classList.add('sinal');
+        sinal.textContent = sinais[Math.floor(Math.random() * sinais.length)];
+
+        const angulo = Math.random() * 2 * Math.PI;
+        const distancia = Math.random() * 100 + 50;
+        sinal.style.setProperty('--x', `${Math.cos(angulo) * distancia}px`);
+        sinal.style.setProperty('--y', `${Math.sin(angulo) * distancia}px`);
+
+        explosao.appendChild(sinal);
+    }
+
+    setTimeout(() => {
+        explosao.innerHTML = '';
+    }, 1000);
+}
+// Adiciona o event listener corretamente
+document.getElementById("calcular").addEventListener("click", exe13);
+
+function exe14() {
+    // Obtém o valor do ano de nascimento e converte para número
+    let nascimento = Number(document.getElementById("nro1").value);
+    
+    // Obtém o valor do ano atual e converte para número
+    let anoAtual = Number(document.getElementById("nro2").value);
+
+    // Calcula a idade em anos
+    let idadeAnos = nascimento - anoAtual;
+
+    // Calcula a idade em meses (considerando 12 meses por ano)
+    let idadeMeses = idadeAnos * 12;
+
+    // Calcula a idade em dias (considerando 365 dias por ano)
+    let idadeDias = idadeAnos * 365;
+
+    // Calcula a idade em semanas (considerando 52 semanas por ano)
+    let idadeSemanas = idadeAnos * 52;
+
+    // Exibe os resultados
+    document.getElementById("resultadoAnos").textContent = "Idade em anos: " + idadeAnos;
+    document.getElementById("resultadoMeses").textContent = "Idade em meses: " + idadeMeses;
+    document.getElementById("resultadoDias").textContent = "Idade em dias: " + idadeDias;
+    document.getElementById("resultadoSemanas").textContent = "Idade em semanas: " + idadeSemanas;
+}
+    
+
 
     
 

@@ -1,11 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(192, 192, 211);
-    /* Usa modelo FlexBox para centralizar conteúdo */
-    display: flex; 
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .card {
@@ -20,17 +19,17 @@ button {
     background-color: bisque;
     color: black;
     border: none;
-    padding: 10px 15px; /* 10px acima/abaixo, 15px esquerda/direita */
+    padding: 10px 15px;
     border-radius: 5px;
-    cursor: pointer; /* Cursor correto */
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: rgb(52, 52, 186); /* Correção da cor */
+    background-color: rgb(52, 52, 186);
 }
 
 .image {
-    border-radius: 50%; /* Imagem arredondada */
+    border-radius: 50%;
     width: 135px;
     height: 135px;
     margin-bottom: 10px;
@@ -45,6 +44,7 @@ button:hover {
     position: fixed;
     left: 0;
     top: 0;
+    overflow-y: auto;
 }
 
 .sidebar ul {
@@ -56,7 +56,6 @@ button:hover {
     margin: 10px 0;
 }
 
-/* Corrige a cor dos links dentro da sidebar */
 .sidebar ul li a {
     color: rgb(196, 34, 34);
     text-decoration: none;
@@ -66,12 +65,35 @@ button:hover {
     color: rgb(255, 100, 100);
 }
 
-/* Ajuste no container */
 .container {
-    flex-grow: 1; /* Permite que o conteúdo cresça */
+    flex-grow: 1;
     padding: 20px;
-    margin-left: 200px; /* Para compensar a sidebar fixa */
+    margin-left: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Novas regras para a explosão de sinais matemáticos */
+#explosao {
+    position: relative;
+    margin-top: 20px;
+}
+
+.sinal {
+    position: absolute;
+    font-size: 24px;
+    color: #ff5722; /* Cor laranja */
+    animation: explodir 1s ease-out forwards;
+}
+
+@keyframes explodir {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
 }
