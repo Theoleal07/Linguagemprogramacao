@@ -1,7 +1,6 @@
 function seguir(){
     alert('Você agora está seguindo Samuel P. Souza')
 }
-//exercício 1 
 function exe1(){
     //vamos usar DOM para recuperar os dados do HTML
     //DOM - Document Object Model 
@@ -41,17 +40,17 @@ function exe5(){
     document.getElementById("sub").innerText = "O preço do produto com 10% de desconto: " + sub
 }
 function exe6() {
-    let nro1 = Number(document.getElementById("nro1").value); // Salário fixo
-    let nro2 = Number(document.getElementById("nro2").value); // Valor das vendas
+    let salario = Number(document.getElementById("salario").value); // Salário fixo
+    let vendas = Number(document.getElementById("vendas").value); // Valor das vendas
 
     // Calcula a comissão de 4% sobre as vendas
-    let comissao = nro2 * 4 / 100;
+    let comissao = (vendas * 4 )/ 100;
 
     // Calcula o salário final com a comissão
-    let sub = nro1 + comissao;
+    let final = salario + comissao;
 
     // Exibe o resultado formatado com duas casas decimais
-    document.getElementById("sub").innerText = "O salário final com a comissão de 4% é: " + sub.toFixed(2);
+    document.getElementById("resultado").innerText = "Comissão: " + comissao + " salário final: " + final; 
 }
 function exe7() {
     let nro1 = Number(document.getElementById("nro1").value);
@@ -163,9 +162,7 @@ function exe13() {
         explosao.innerHTML = '';
     }, 1000);
 }
-// Adiciona o event listener corretamente
 document.getElementById("calcular").addEventListener("click", exe13);
-
 function exe14() {
     // Obtém o valor do ano de nascimento e converte para número
     let nascimento = Number(document.getElementById("nro1").value);
@@ -191,9 +188,25 @@ function exe14() {
     document.getElementById("resultadoDias").textContent = "Idade em dias: " + idadeDias;
     document.getElementById("resultadoSemanas").textContent = "Idade em semanas: " + idadeSemanas;
 }
-    
+function exe15() {
+    // Captura os valores dos inputs
+    let salario = Number(document.getElementById("nro1").value);
+    let conta1 = Number(document.getElementById("conta1").value);
+    let conta2 = Number(document.getElementById("conta2").value);
 
+    // Calcula as multas de 2% sobre cada conta
+    let multa1 = conta1 * 0.02;
+    let multa2 = conta2 * 0.02;
 
+    // Calcula o total a ser pago
+    let totalPago = (conta1 + multa1) + (conta2 + multa2);
+
+    // Calcula o salário restante
+    let saldoRestante = salario - totalPago;
+
+    // Exibe o resultado
+    document.getElementById("resultado").innerText = `O salário restante é: R$${saldoRestante.toFixed(2)}`;
+}
     
 
 

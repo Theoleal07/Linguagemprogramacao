@@ -57,7 +57,7 @@ button:hover {
 }
 
 .sidebar ul li a {
-    color: rgb(196, 34, 34);
+    color: rgb(114, 139, 139);
     text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ button:hover {
 .sinal {
     position: absolute;
     font-size: 24px;
-    color: #ff5722; /* Cor laranja */
+    color: #e52727; 
     animation: explodir 1s ease-out forwards;
 }
 
