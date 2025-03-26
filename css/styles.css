@@ -1,6 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(143, 17, 17);
+    background-color: rgb(175, 43, 43);
     /* usa o modelo flexBox, conceito para posicionamento */
     display: flex;
     align-items: center; /*centraliza verticslmente */
@@ -17,17 +17,51 @@ body{
     cursor:pointer;
 }
 button{
-    background:rgb(180, 44, 44);
+    background:rgb(204, 64, 64);
     color:white;
     border: none;
     padding: 10px 15px;
 }
 button:hover{
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(184, 50, 50);
 }
 .image{
     border-radius: 50%;
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
+}
+.sidebar{
+    width: 200px;
+    height: 100vh;
+    background:#ec5656;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+}
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+
+}
+.sidebar ul li{
+    margin: 10px;
+}
+.sidebar ul li a{
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.container{
+     /* capacidade de um elemento crescer*/
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
