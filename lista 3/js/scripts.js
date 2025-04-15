@@ -177,7 +177,8 @@ function exe8() {
             idadePesoCount++;
         }
         if (altura < 1.5) {
-            somaIdadesAlturaBaixa += idade;
+            somaIdadesAlturaBaixa += idade; //somaIdadesAlturaBaixa = somaIdadesAlturaBaixa + idade;
+
             countAlturaBaixa++;
         }
         if (olhos === 'A') {
@@ -187,7 +188,6 @@ function exe8() {
             ruivosNaoAzuis++;
         }
     }
-
     let mediaIdade = countAlturaBaixa > 0 ? (somaIdadesAlturaBaixa / countAlturaBaixa).toFixed(2) : 0;
     let porcentagemAzuis = ((olhosAzuis / 4) * 100).toFixed(2);
     let resultado = `
@@ -198,5 +198,70 @@ function exe8() {
     `;
     document.getElementById("resultado").innerHTML = resultado;
 }
+function exe9() {
+    let idade, peso, altura;
+    let somaIdades = 0;
+    let pesoAltura = 0;
+    let totalAltos = 0;
+    let idadeAltura = 0;
+    for (let i = 1; i <= 4; i++) {
+        do {
+            idade = Number(prompt(`Pessoa ${i} - Informe a idade:`));
+        } while (idade < 0);
+        do {
+            peso = Number(prompt(`Pessoa ${i} - Informe o peso:`));
+        } while (peso < 0);
+        do {
+            altura = Number(prompt(`Pessoa ${i} - Informe a altura:`));
+        } while (altura < 0);
+        if (peso > 90 && altura < 1.5) {
+            pesoAltura++;
+        }
+        if (altura > 1.9) {
+            totalAltos++;
+            if (idade >= 10 && idade <= 30) {
+                idadeAltura++;
+            }
+        }
+        somaIdades += idade;
+    }
+    let mediaIdades = somaIdades / 4;
+    let porcentagem = totalAltos > 0 ? (idadeAltura / totalAltos) * 100 : 0;
+    let resultado = `
+        Média das idades das pessoas: ${mediaIdades.toFixed(2)}<br>
+        Quantidade de pessoas com peso > 90kg e altura < 1.5m: ${pesoAltura}<br>
+        Porcentagem de pessoas entre 10 e 30 anos com altura > 1.9m: ${porcentagem.toFixed(2)}%<br>
+    `;
+    document.getElementById("resultado").innerHTML = resultado;
+}
+function exe10() { 
+    let numero; 
+    let somaPares = 0;
+    let somaPrimos = 0; 
 
-
+    for (let i = 1; i <= 3; i++) {
+        do {
+            numero = Number(prompt(`Digite o ${i}º número: `));
+        } while (isNaN(numero));
+        if (numero % 2 === 0) {
+            somaPares += numero; 
+        }
+        let primo = true;
+        if (numero < 2) {
+            primo = false;
+        } else {
+            for (let j = 2; j <= Math.sqrt(numero); j++) {
+                if (numero % j === 0) {
+                    primo = false; 
+                    break;
+                }
+            }
+        }
+        if (primo) {
+            somaPrimos += numero;
+        }
+    }
+    let resultado = `Soma dos números pares: ${somaPares}<br>
+    Soma dos números primos: ${somaPrimos}<br>`;
+    document.getElementById("resultado").innerHTML = resultado; 
+}

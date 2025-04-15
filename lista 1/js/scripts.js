@@ -161,8 +161,8 @@ function exe13() {
     setTimeout(() => {
         explosao.innerHTML = '';
     }, 1000);
+    document.getElementById("calcular").addEventListener("click", exe13);
 }
-document.getElementById("calcular").addEventListener("click", exe13);
 function exe14() {
     // Obtém o valor do ano de nascimento e converte para número
     let nascimento = Number(document.getElementById("nro1").value);
