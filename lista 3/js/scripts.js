@@ -163,10 +163,10 @@ function exe8() {
         } while (idade < 0);
         do {
             peso = Number(prompt(`Pessoa ${i} - Informe o peso (kg):`));
-        } while (peso <= 0);
+        } while (peso < 0);
         do {
             altura = Number(prompt(`Pessoa ${i} - Informe a altura (m):`));
-        } while (altura <= 0);
+        } while (altura < 0);
         do {
             olhos = prompt(`Pessoa ${i} - Cor dos olhos (A=azul, P=preto, V=verde, C=castanho):`).toUpperCase();
         } while (!['A','P','V','C'].includes(olhos));
