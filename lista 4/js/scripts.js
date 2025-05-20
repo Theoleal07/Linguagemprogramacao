@@ -230,3 +230,4 @@ function exe10() {
         }
     }alert(`O vetor resultante 2 é: ${vetResul2}`)
 }
+//commit
